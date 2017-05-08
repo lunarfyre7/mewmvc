@@ -2,7 +2,6 @@
 define('ROOT_PATH', __DIR__ . '/');
 $GLOBALS['CONF'] = include 'config.php';
 include 'helpers.php';
-include 'makedb.php';
 
 spl_autoload_register(function ($name) {
     foreach(array('classes/', 'controllers/') as $dir) {
@@ -33,7 +32,7 @@ function renderView($controllerName, $template, $args=false) {
 
 #renderview($requestPage.'_controller', $requestPage);
 
-#routes
+#routes/router
 $routes = array(
     '/' => function () {
         renderview('default_controller', 'default');
