@@ -1,6 +1,10 @@
 <?php
 class Err404Controller extends ControllerBase {
     function controller() {
-        $this->desired = $_GET['p'];
+        if (empty($_GET['p']))
+            $this->desired = '';
+        else
+            $this->desired = $_GET['p'];
+            
     }
 }
